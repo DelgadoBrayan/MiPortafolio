@@ -64,9 +64,9 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-          <li onClick={()=>viewPDF()} className="text-secondary font-medium text-[18px] cursor-pointer">
+          {/* <li onClick={()=>viewPDF()} className="text-secondary font-medium text-[18px] cursor-pointer">
             Curriculum
-          </li>
+          </li> */}
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>

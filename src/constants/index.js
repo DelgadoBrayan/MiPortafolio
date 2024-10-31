@@ -14,18 +14,14 @@ import {
   mongodb,
   git,
   figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  gosport,
   carrent,
   jobit,
   tripguide,
   express,
   jsonwebtoken,
   strooper,
-  volleyball
+  volleyball,
 } from "../assets";
 
 export const navLinks = [
@@ -121,7 +117,7 @@ const experiences = [
   {
     title: "Front End and Back End Developer",
     company_name: "Sena",
-    icon: starbucks,
+    icon: gosport,
     iconBg: "#383E56",
     date: "March 2024 - September 2024",
     points: [

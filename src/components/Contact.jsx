@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
+import Swal from "sweetalert2";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import axios from "axios";
 
 const Contact = () => {
   const formRef = useRef();
@@ -27,41 +27,26 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    try {
+      setLoading(true);
+      const response =await axios.post('https://back-end-portafolio-1xvz.onrender.com/api/contactCompany', form)
+      Swal.fire({
+        title: response.data.msg,
+        icon: "success",
+        confirmButtonColor: "#3085d6",
+       
+      });
+      setLoading(false)
+    } catch (error) {
+      Swal.fire({
+        title: "Ocurrio un error intenta de nuevo",
+        icon: "error",
+        confirmButtonColor: "#d33",
+      });
+      setLoading(false)
+    }
   };
 
   return (

@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import logoBD from "./logoBD.png"
+import gosport from './gosport.png'
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -38,6 +39,7 @@ import volleyball from "./volleyball.png"
 export {
   logo,
   logoBD,
+  gosport,
   backend,
   creator,
   mobile,
