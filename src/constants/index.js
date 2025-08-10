@@ -22,6 +22,10 @@ import {
   jsonwebtoken,
   strooper,
   volleyball,
+  logoPragma,
+  java,
+  webFlux,
+  amazon
 } from "../assets";
 
 export const navLinks = [
@@ -60,12 +64,12 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "java",
+    icon: java,
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "webflux",
+    icon: webFlux,
   },
   {
     name: "JavaScript",
@@ -78,10 +82,6 @@ const technologies = [
   {
     name: "React JS",
     icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
   },
   {
     name: "Tailwind CSS",
@@ -110,10 +110,30 @@ const technologies = [
   {
     name: "figma",
     icon: figma,
-  }
+  },
+  {
+    name: "aws",
+    icon: amazon,
+  },
+
 ];
 
 const experiences = [
+  {
+    title: "Backend Developer",
+    company_name: "Pragma S.A.",
+    icon: logoPragma,
+    iconBg: "#EDEDED",
+    date: "December 2024 - June 2025",
+    points: [
+      "Developed reactive microservices using Java, Spring Boot, and WebFlux within a clean hexagonal architecture.",
+      "Created dynamic queries with R2DBC and handled SQL integration for reactive data persistence.",
+      "Implemented unit and integration tests using JUnit and Mockito, achieving high test coverage.",
+      "Used MapStruct for efficient mapping between entities and models across layers.",
+      "Structured error handling using custom exceptions and global exception management with proper logging.",
+      "Worked with AWS tools such as Lambda, API Gateway, and Parameter Store in a backend context.",
+    ],
+  },
   {
     title: "Front End and Back End Developer",
     company_name: "Sena",
@@ -121,11 +141,11 @@ const experiences = [
     iconBg: "#383E56",
     date: "March 2024 - September 2024",
     points: [
-      "I may not have professional experience yet, but during my training projects, I successfully carried out various tasks and gained valuable hands-on skills",
-      "On the backend side, perform the services for the intercenter game mode.",
-      "I created the services, which returned the data to show in the graphs.",
-      "On the Front End side, I was in charge of the entire player part.",
-      "In the Front End I implemented the logic for the intercenter game mode.",
+      "Completed multiple training projects, gaining practical experience in both frontend and backend development.",
+      "Developed backend services to support the intercenter game mode functionality.",
+      "Created APIs to provide data for interactive graphs and visual reports.",
+      "Designed and implemented the entire player management interface on the frontend.",
+      "Integrated game logic and user interactions for the intercenter game mode on the frontend.",
     ],
   }
 ];

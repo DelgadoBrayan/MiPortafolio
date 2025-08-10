@@ -24,6 +24,9 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import express from "./tech/express.png"
 import jsonwebtoken from "./tech/jsonwebtoken.png"
+import java from './tech/java.png'
+import webFlux from './tech/spring_webflux_logo.png'
+import amazon from './tech/amazon-web-services.png'
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -35,6 +38,7 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import strooper from "./strooper.png"
 import volleyball from "./volleyball.png"
+import logoPragma from "./logoPragma.png"
 
 export {
   logo,
@@ -70,5 +74,9 @@ export {
   jobit,
   tripguide,
   strooper,
-  volleyball
+  volleyball,
+  logoPragma,
+  java,
+  webFlux,
+  amazon
 };

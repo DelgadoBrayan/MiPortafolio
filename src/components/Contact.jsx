@@ -29,6 +29,31 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const missingFields = [];
+
+    if (!form.name.trim()) missingFields.push("Name");
+    if (!form.email.trim()) missingFields.push("Email");
+    if (!form.message.trim()) missingFields.push("Message");
+  
+    if (missingFields.length > 0) {
+      Swal.fire({
+        title: "Please complete the following fields:",
+        html: `<strong>${missingFields.join(", ")}</strong>`,
+        icon: "warning",
+        confirmButtonColor: "#f1c40f",
+      });
+      return;
+    }
+
+    const emailRegex =/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(form.email)){
+      Swal.fire({
+        title:"Please enter a valid email address",
+        icon:"warning",
+        confirmButtonColor:"#f1c40f"
+      })
+      return;
+    }
     try {
       setLoading(true);
       const response =await axios.post('https://back-end-portafolio-1xvz.onrender.com/api/contactCompany', form)
@@ -39,6 +64,7 @@ const Contact = () => {
        
       });
       setLoading(false)
+      setForm({ name: "", email: "", message: "" });
     } catch (error) {
       Swal.fire({
         title: "Ocurrio un error intenta de nuevo",
@@ -72,7 +98,7 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -83,7 +109,7 @@ const Contact = () => {
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your email?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>

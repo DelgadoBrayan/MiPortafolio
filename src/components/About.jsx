@@ -39,7 +39,6 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
@@ -47,12 +46,9 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and 
-        database.I'm a fast learner who approaches each project with dedication
-        and curiosity. I enjoy working through challenges to create efficient,
-        scalable, and user-friendly solutions. Let's bring your ideas to life
-        together!
+      I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and databases.
+      I've also worked with Java and Spring Boot, applying clean and hexagonal architecture principles. I have experience building reactive APIs using Spring WebFlux and R2DBC, writing unit tests with JUnit and Mockito, and using MapStruct for efficient data mapping between layers.
+      I'm a fast learner who approaches each project with dedication and curiosity. I enjoy working through challenges to create efficient, scalable, and user-friendly solutions. Let's bring your ideas to life together!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
